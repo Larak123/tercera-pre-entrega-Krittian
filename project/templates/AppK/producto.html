@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Productos</title>
+</head>
+<body>
+
+{% block contenido %}
+
+    <h1>Productos</h1>
+    {% if productos %}
+        {% for producto in productos %}
+            <a href="{% url 'editar_productos' producto.id %}" class="list-group-item">
+            <p>Nombre: {{ producto.nombre }}</p>
+            <p>Valor: {{ producto.valor }}</p>
+                <a/>
+        {% endfor %}
+    {% else %}
+        <h4> No hay Productos en el momento</h4>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

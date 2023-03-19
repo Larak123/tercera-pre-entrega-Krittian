@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador</title>
+</head>
+<body>
+
+
+{% block contenido %}
+
+<h1>Buscador de Empleado/Cliente/Producto</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{form}}
+
+        <button>
+            Buscar
+        </button>
+    </form>
+
+    <h1>{{ value }}</h1>
+
+
+{% endblock %}
+</body>
+</html>

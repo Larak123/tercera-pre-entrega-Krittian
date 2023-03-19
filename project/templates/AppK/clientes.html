@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+    <h1>HOLA</h1>
+    {% if clientes %}
+        {% for cliente in clientes %}
+            <a href="{% url 'editar_clientes' cliente.id %}" class="list-group-item">
+                <p>Nombre: {{ cliente.nombre }}</p>
+                <p>Apellido: {{ cliente.apellido }}</p>
+                <p>Email: {{ cliente.email }}</p>
+                <a/>
+        {% endfor %}
+    {% else %}
+        <h4> No hay Clientes en el momento</h4>
+    {% endif %}
+{% endblock %}

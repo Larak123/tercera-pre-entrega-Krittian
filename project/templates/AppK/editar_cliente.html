@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Cliente</title>
+</head>
+<body>
+  {% block contenido %}
+  {{error}}
+  <form method="POST">
+    {% csrf_token %}
+    {{formulario}}
+    <button>Editar</button>
+  </form>
+  <form action="{% url 'borrar_clientes' cliente.id %}" method="POST">
+    {% csrf_token %}
+    <button>Borrar</button>
+  </form>
+  {% endblock %}
+</body>
+</html>

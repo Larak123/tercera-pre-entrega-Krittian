@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Producto</title>
+</head>
+<body>
+  {% block contenido %}
+    <h1>Crear Producto</h1>
+    <form method="POST">
+      {% csrf_token %}
+        {{form_productos}}
+         <button>
+             Guardar Producto
+         </button>
+    </form>
+{% endblock %}
+</body>
+</html>

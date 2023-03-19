@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Empleados</title>
+</head>
+<body>
+
+{% block contenido %}
+
+    <h1>Empleados</h1>
+    {% if empleados %}
+        {% for empleado in empleados %}
+            <a href="{% url 'editar_empleados' empleado.id %}" class="list-group-item">
+                <p>Nombre: {{ empleado.nombre }}</p>
+                <p>Apellido: {{ empleado.apellido }}</p>
+            </a>
+        {% endfor %}
+    {% else %}
+        <h4> No hay Empleados en el momento</h4>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>
